@@ -249,11 +249,20 @@ Built something cool? Share it:
 
 ### Claude not responding?
 ```bash
-# If using subscription:
+# Quick fix - run the setup script:
+./quick-setup.sh
+
+# Or manually install:
+npm install -g @anthropic-ai/claude-code
+
+# Then login (if using subscription):
 claude --dangerously-skip-permissions
 
-# If using API key:
+# Check API key (if using that method):
 echo $ANTHROPIC_API_KEY  # Should show your key
+
+# If 'claude' command not found, use npx:
+npx @anthropic-ai/claude-code "hello"
 ```
 
 ### Database not connecting?
