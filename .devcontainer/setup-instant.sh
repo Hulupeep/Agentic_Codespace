@@ -59,6 +59,12 @@ echo "Setup started at $(date)" > "$LOG_FILE"
     npx supabase start 2>&1 || true
     npx supabase db push 2>&1 || true
     
+    # Import tide data
+    echo "🌊 Importing tide data..."
+    if [ -f "/workspaces/tidetimes/import-tide-data.js" ]; then
+        node /workspaces/tidetimes/import-tide-data.js 2>&1 || echo "Tide data import will retry later"
+    fi
+    
     # API key setup
     if [ ! -z "$ANTHROPIC_API_KEY" ]; then
         mkdir -p ~/.claude
