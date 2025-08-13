@@ -6,7 +6,7 @@
     "ghcr.io/devcontainers-contrib/features/supabase-cli:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "postCreateCommand": "chmod +x .devcontainer/setup-simple.sh check-setup.sh quick-setup.sh update-tools.sh && .devcontainer/setup-simple.sh",
+  "postCreateCommand": "chmod +x .devcontainer/setup-final.sh check-setup.sh quick-setup.sh update-tools.sh start-supabase.sh && .devcontainer/setup-final.sh",
   "postStartCommand": "code WELCOME.md || true",
   "waitFor": "postCreateCommand",
   "forwardPorts": [54321, 54322, 54323, 54324, 54421],
